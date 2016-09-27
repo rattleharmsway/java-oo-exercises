@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 
 public class StudentAndCourseTest extends TestCase {
 
-	String s1 = "either your getName() method isn't doing its job or you're not " +
+	String s1 = "either your getName() method isn't   doing its job or you're not " +
 			"setting your instance variables properly";
 	String s2 = "either your getGPA() method is not doing its job or you're not " +
 			"setting your instance variables properly";
