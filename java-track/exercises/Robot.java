@@ -9,23 +9,48 @@ public class Robot {
 	public Robot(String name, int speed, int orientation, int x, int y){
 		this.name = name;
 		this.speed = speed;
-		this.orientation = orientation;
+		if (orientation == 360 || orientation == 270 || orientation == 180 || orientation == 90){
+			this.orientation = orientation;	
+		}
+		else{
+			this.orientation = 360;
+		}
 		this.x = x;
 		this.y = y;
 	}
 	
-	public void move(){
+	public String getName(){
+		return this.name;
+	}
+	
+	public int getSpeed(){
+		return this.speed;
+	}
+	
+	public int getOrientation(){
+		return this.orientation;
+	}
+	
+	public int getX(){
+		return this.x;
+	}
+	
+	public int getY(){
+		return this.y;
+	}
+	
+	public void move(int move){
 		if (this.orientation%360 == 0){
-			this.y = this.y + this.speed;			
+			this.y = this.y + (move * this.speed);			
 		}
 		else if (this.orientation%270 == 0){
-			this.x = this.x + this.speed;
+			this.x = this.x + (move * this.speed);
 		}
 		else if (this.orientation%180 == 0){
-			this.y = this.y - this.speed;
+			this.y = this.y - (move * this.speed);
 		}
 		else{
-			this.x = this.x - this.speed;  //this.speed
+			this.x = this.x - (move * this.speed);  //this.speed
 		}
 	}
 	
