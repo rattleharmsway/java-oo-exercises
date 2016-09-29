@@ -1,4 +1,3 @@
-package pset9;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -219,6 +218,11 @@ public class StudentAndCourseTest extends TestCase {
 
 				assertTrue("addStudent not working properly: student added even though class was full", !added);
 			}
+//			BELOW IS TO TEST THE generateRoster() function in the course class			
+//			String[] ROSTER = c.generateRoster();
+//			for(int m = 0; m < ROSTER.length; m++){
+//				System.out.println((m+1) + ".)" + ROSTER[m]);
+//			}
 		}
 	}
 

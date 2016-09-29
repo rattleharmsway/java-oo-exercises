@@ -69,20 +69,5 @@ public class Robot {
 	
 	public String ToString(){
 		return "Orientation: " + this.orientation + " Speed: " + this.speed + " Name: " + this.name + " Cords X: " + this.x + " Cords Y: " + this.y;
-	}
-	
-	
-	public static void main(String[] args) {
-		Robot rob1 = new Robot("ROB1", 1, 360, 1, 1);
-		Robot rob2 = new Robot("ROB2", 1, 270, 2,2);
-		System.out.println(rob1.ToString());
-		System.out.println(rob2.ToString());
-		System.out.println(rob1.Distance(rob2));
-		rob1.rotate("r");
-		rob1.move();
-		rob1.rotate("l");
-		rob1.move();
-		System.out.println(rob1.ToString());
-		System.out.println(rob1.Distance(rob2));
 	}	
 }
