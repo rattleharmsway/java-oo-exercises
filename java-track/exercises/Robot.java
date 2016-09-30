@@ -68,6 +68,6 @@ public class Robot {
 	}
 	
 	public String ToString(){
-		return "Orientation: " + this.orientation + " Speed: " + this.speed + " Name: " + this.name + " Cords X: " + this.x + " Cords Y: " + this.y;
+		return " Name: " + this.name + "Orientation: " + this.orientation + " Speed: " + this.speed + " Cords X: " + this.x + " Cords Y: " + this.y;
 	}	
 }

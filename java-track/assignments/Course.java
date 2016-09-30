@@ -68,6 +68,9 @@ public class Course {
 	public String toString(){
 		return this.getName() + " " + this.getCredits() + " " + this.getSeats();
 	}
+
 }
+
+
 	
 
