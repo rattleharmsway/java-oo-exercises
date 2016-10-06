@@ -1,5 +1,7 @@
 
 public class Robot {
+	
+
 	private String name;
 	public int speed;
 	private int orientation;
@@ -39,6 +41,14 @@ public class Robot {
 		return this.y;
 	}
 	
+	public void attack(String a){
+		this.name = a;
+		this.speed = 0;
+		this.orientation = 0;
+		this.x = 0;
+		this.y = 0;
+	}
+	
 	public void move(int move){
 		if (this.orientation%360 == 0){
 			this.y = this.y + (move * this.speed);			
@@ -68,6 +78,10 @@ public class Robot {
 	}
 	
 	public String ToString(){
-		return " Name: " + this.name + "Orientation: " + this.orientation + " Speed: " + this.speed + " Cords X: " + this.x + " Cords Y: " + this.y;
+		return "Name: " + this.name + " Orientation: " + this.orientation + " Speed: " + this.speed + " Cords X: " + this.x + " Cords Y: " + this.y;
+	}	
+	
+	public String toString(){
+		return "Name: " + this.name + " Orientation: " + this.orientation + " Speed: " + this.speed + " Cords X: " + this.x + " Cords Y: " + this.y;
 	}	
 }
