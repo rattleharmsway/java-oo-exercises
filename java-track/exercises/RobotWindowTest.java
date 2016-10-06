@@ -90,7 +90,7 @@ public class RobotWindowTest {
 				double distance;
 				if (selected2.length < 2){
 				    Object selected = JOptionPane.showInputDialog(null, "Choose Another Robot", "Input",JOptionPane.INFORMATION_MESSAGE, null,listModel.toArray(),listModel.toArray());
-				    System.out.println(selected);
+				    //System.out.println(selected);
 				    distance = (double)listModel.get(selected2[0]).Distance((Robot)selected);
 			    }
 				else{
