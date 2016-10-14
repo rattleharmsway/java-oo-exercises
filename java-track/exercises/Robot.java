@@ -7,6 +7,7 @@ public class Robot {
 	private int orientation;
 	private int x;
 	private int y;
+	private String setBehavior;
 	
 	public Robot(String name, int speed, int orientation, int x, int y){
 		this.name = name;
@@ -19,6 +20,7 @@ public class Robot {
 		}
 		this.x = x;
 		this.y = y;
+		this.setBehavior = "";
 	}
 	
 	public String getName(){
@@ -83,5 +85,8 @@ public class Robot {
 	
 	public String toString(){
 		return "Name: " + this.name + " Orientation: " + this.orientation + " Speed: " + this.speed + " Cords X: " + this.x + " Cords Y: " + this.y;
-	}	
+	}
+	
+	
+
 }

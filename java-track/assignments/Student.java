@@ -86,16 +86,21 @@ public class Student {
 	}
 	
 	public double computeTuition(){
-		double yearTuition = 20000.00;
-		int semesters = (int)(this.credits/15.0);
-		if ((semesters * 15) < this.credits){
-			semesters++;
+		double tuition = 0;
+		if (this.credits >= 15){
+			tuition += (double)((this.credits/15)*20000.00);
 		}
-		return (double)(semesters*yearTuition);
+//		double yearTuition = 20000.00;
+//		int semesters = (int)(this.credits/15.0);
+//		if ((semesters * 15) < this.credits){
+//			semesters++;
+//		}
+//		return (double)(semesters*yearTuition);
+		return (double)(((this.credits%15) * (1333.33))+tuition);
 	}
 	
-	public Student createLegacy(Student one){
-		return new Student(one, this);
+	public Student createLegacy(Student one, Student two){
+		return new Student(one, two);
 		
 	}
 	
