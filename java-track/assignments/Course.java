@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Course {
+	private static ArrayList<Course> courses = new ArrayList<Course>();
 	private String name;
 	private ArrayList<Student> roster;//Student[] roster;
 	private int seats;
@@ -13,7 +14,13 @@ public class Course {
 		this.seats = seats;
 		this.roster = new ArrayList<Student>(seats);//Student[seats]
 		this.credits = credits;
+		Course.courses.add(this);
 
+	}
+	
+	public static ArrayList<Course> getAllCourses(){
+		return Course.courses;
+		
 	}
 
 			

@@ -3,9 +3,9 @@ package javagram.filters;
 import javagram.Picture;
 import java.awt.Color;
 
-public class BlueFilter implements Filter{
+public class BrightnessFilter implements Filter{
 
-	public Picture process(Picture original, int m, Color mono) {
+	public Picture process(Picture original, int brightness, Color mono) {
 		
 		Picture processed = new Picture(original.width(), original.height());
         
@@ -20,9 +20,21 @@ public class BlueFilter implements Filter{
 	          int g = c.getGreen();
 	          int b = c.getBlue();
 	          
-	          int newBlue = (r + g + b) / 3;
+	          int newRed = brightness+r;
+	          int newGreen = brightness+g;
+	          int newBlue = brightness+b;
 	          
-	          processed.set(i, j, new Color(0, 0, newBlue));
+	          if (newRed > 255){
+	        	  newRed = 255;
+	          }
+	          if (newGreen > 255){
+	        	  newGreen = 255;
+	          }
+	          if (newBlue > 255){
+	        	  newBlue = 255;
+	          }
+	          
+	          processed.set(i, j, new Color(newRed, newGreen, newBlue));
 	    	  
 	      }
 	    }

@@ -1,6 +1,7 @@
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 
 import org.junit.Test;
 
@@ -113,7 +114,7 @@ public class StudentAndCourseTest extends TestCase {
 			int c2 = (int)(Math.random() * 120 + 1);
 			double g2 = Math.round(Math.random() * 4000) / 1000.0;
 			ss.submitGrade(g2, c2);
-			Student bb = s.createLegacy(s, ss);
+			Student bb = Student.createLegacy(s, ss);
 			assertTrue("create baby not setting name properly", bb.getName().contains(s.getName()) && bb.getName().contains(ss.getName()));
 			assertEquals("create baby not setting gpa properly", (g + g2) / 2, bb.getGPA(), 0.01);
 			assertEquals("create baby not setting credits properly", bb.getCredits(), Math.max(c, c2));
@@ -236,6 +237,24 @@ public class StudentAndCourseTest extends TestCase {
 		}
 	}
 
+	@Test
+	public void testgetAllCourses() {
+		Course cc;
+		for (int i = 0; i < 100; i++) {
+			double a =  (Math.random() * 5000);
+			int c = (int)Math.random() * 500000;
+			cc = new Course("" + a, c, c);
+			assertTrue("course toString does not contain course name", cc.toString().contains("" + a));
+			ArrayList<Course> cou = Course.getAllCourses();
+			assertTrue("course toString does not contain credits",cou.get(i).equals(cc));
+		
+		}
+		ArrayList<Course> cour = Course.getAllCourses();
+		for (int x = 0; x < cour.size(); x++){
+			System.out.println(cour.get(x));
+		}
+		
+	}	
 
 
 }

@@ -3,7 +3,7 @@ package javagram.filters;
 import javagram.Picture;
 import java.awt.Color;
 
-public class BlueFilter implements Filter{
+public class GrayScaleFilter implements Filter{
 
 	public Picture process(Picture original, int m, Color mono) {
 		
@@ -16,13 +16,9 @@ public class BlueFilter implements Filter{
 	    	  Color c = original.get(i, j);
 	          
 	          //get color components from each pixel
-	          int r = c.getRed();
-	          int g = c.getGreen();
-	          int b = c.getBlue();
+	          int average = (c.getRed() + c.getGreen() + c.getBlue())/3;
 	          
-	          int newBlue = (r + g + b) / 3;
-	          
-	          processed.set(i, j, new Color(0, 0, newBlue));
+	          processed.set(i, j, new Color(average, average, average));
 	    	  
 	      }
 	    }

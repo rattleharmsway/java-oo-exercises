@@ -100,6 +100,8 @@ public final class Picture implements ActionListener {
         this.filename = filename;
         try {
             // try to read from file in working directory
+
+        	
             File file = new File(filename);
             if (file.isFile()) {
                 image = ImageIO.read(file);
@@ -116,7 +118,7 @@ public final class Picture implements ActionListener {
         }
         catch (IOException e) {
             // e.printStackTrace();
-            throw new RuntimeException("Could not open file: " + filename);
+            throw new RuntimeException("Could not open file in picture: " + filename);
         }
     }
 

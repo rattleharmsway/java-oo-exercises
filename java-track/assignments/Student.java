@@ -34,6 +34,22 @@ public class Student {
 		this.credits = Math.max(one.getCredits(), two.getCredits());
 		this.GPA = (double)((one.GPA + two.GPA)/2);
 	}
+	
+	@Override
+	public boolean equals(Object o){
+		//self check
+		if (this == o)
+			return true;
+		//null check
+		if (o == null)
+			return false;
+		//type check and cast
+		if (getClass() != o.getClass())
+			return false;
+		Student student = (Student)o;
+		//field comparison
+		return 
+	}
 			
 	public String getName(){
 		return this.firstName + " " + this.lastName;
@@ -99,7 +115,7 @@ public class Student {
 		return (double)(((this.credits%15) * (1333.33))+tuition);
 	}
 	
-	public Student createLegacy(Student one, Student two){
+	public static Student createLegacy(Student one, Student two){
 		return new Student(one, two);
 		
 	}
