@@ -23,6 +23,10 @@ public class StudentAndCourseTest extends TestCase {
 	@Test
 	public void testStudentInit() {
 		Student s = new Student("Doug", "Shook", 111111);
+		Student ss = new Student("Doug", "Shook", 111111);
+		Student sss = new Student("Doug", "Shoo", 111111);
+		assertEquals(true, s.equals(ss));
+		assertEquals(false, s.equals(sss));
 		assertEquals("Doug Shook", s.getName());
 		assertEquals(111111, s.getStudentID());
 		//No credits, should be a freshman, no GPA

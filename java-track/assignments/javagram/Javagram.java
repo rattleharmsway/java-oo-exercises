@@ -101,8 +101,15 @@ public class Javagram {
 		} 
 		else {
 			do{
-				System.out.println("Save image to (relative to " + dir + ") (type 'exit' to quit w/o saving) ARE YOU SURE YOU WANT TO OVERWRITE YOUR IMAGE? :");
-				fileName = in.next();
+				System.out.println("ARE YOU SURE YOU WANT TO OVERWRITE YOUR IMAGE? :");
+				String check = in.next();
+				if (check.equals("yes")){
+					break;
+				}
+				else{
+					System.out.println("Save image to (relative to " + dir + ") (type 'exit' to quit w/o saving):");
+					fileName = in.next();
+				}
 				
 			}while (fileName.equals(relPath));
 			String absFileName = dir + File.separator + fileName;

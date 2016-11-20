@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Student {
 	//Name (first and last)
@@ -48,7 +49,10 @@ public class Student {
 			return false;
 		Student student = (Student)o;
 		//field comparison
-		return 
+		return Objects.equals(firstName, student.firstName)
+		        && Objects.equals(lastName, student.lastName)
+		        && Objects.equals(StudentID, student.StudentID);
+		 
 	}
 			
 	public String getName(){

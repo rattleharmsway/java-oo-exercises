@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Course {
 	private static ArrayList<Course> courses = new ArrayList<Course>();
@@ -21,6 +22,25 @@ public class Course {
 	public static ArrayList<Course> getAllCourses(){
 		return Course.courses;
 		
+	}
+	
+	@Override
+	public boolean equals(Object o){
+		//self check
+		if (this == o)
+			return true;
+		//null check
+		if (o == null)
+			return false;
+		//type check and cast
+		if (getClass() != o.getClass())
+			return false;
+		Course course = (Course)o;
+		//field comparison
+		return Objects.equals(name, course.name)
+		        && Objects.equals(credits, course.credits)
+		        && Objects.equals(seats, course.seats);
+		 
 	}
 
 			
